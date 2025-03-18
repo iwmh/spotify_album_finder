@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 void main() async {
   runZonedGuarded<Future<void>>(
@@ -20,13 +21,8 @@ class AlbumFinder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const AlbumFinderPage(title: 'Flutter Demo Home Page'),
+    return MaterialApp.router(
+      routerConfig: _router,
     );
   }
 }
@@ -75,6 +71,64 @@ class _AlbumFinderPageState extends State<AlbumFinderPage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+/// The route configuration.
+final GoRouter _router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeScreen();
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          path: 'details',
+          builder: (BuildContext context, GoRouterState state) {
+            return const DetailsScreen();
+          },
+        ),
+      ],
+    ),
+  ],
+);
+
+/// The home screen
+class HomeScreen extends StatelessWidget {
+  /// Constructs a [HomeScreen]
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Home Screen')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => context.go('/details'),
+          child: const Text('Go to the Details screen'),
+        ),
+      ),
+    );
+  }
+}
+
+/// The details screen
+class DetailsScreen extends StatelessWidget {
+  /// Constructs a [DetailsScreen]
+  const DetailsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Details Screen')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => context.go('/'),
+          child: const Text('Go back to the Home screen'),
+        ),
+      ),
     );
   }
 }
