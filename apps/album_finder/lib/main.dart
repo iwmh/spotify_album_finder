@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 void main() async {
-  runZonedGuarded<Future<void>>(
+  await runZonedGuarded<Future<void>>(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
 
@@ -16,7 +16,9 @@ void main() async {
   );
 }
 
+/// AlbumFinder
 class AlbumFinder extends StatelessWidget {
+  /// AlbumFinder
   const AlbumFinder({super.key});
 
   @override
@@ -56,7 +58,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Home Screen')),
-      body: Center(
+      body: const Center(
         child: Text(
           'you need to log in!!',
         ),
@@ -74,9 +76,9 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Details Screen')),
-      body: Center(
+      body: const Center(
         child: Text(
-          'Congratulations!!!\nYou\'re successfully logged in.',
+          "Congratulations!!!\nYou're successfully logged in.",
         ),
       ),
     );
