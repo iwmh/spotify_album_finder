@@ -17,9 +17,16 @@ void main() async {
 }
 
 /// AlbumFinder
-class AlbumFinder extends StatelessWidget {
+class AlbumFinder extends StatefulWidget {
   /// AlbumFinder
   const AlbumFinder({super.key});
+
+  @override
+  State<AlbumFinder> createState() => _AlbumFinderState();
+}
+
+class _AlbumFinderState extends State<AlbumFinder> {
+  // NavigatorKey
 
   @override
   Widget build(BuildContext context) {
