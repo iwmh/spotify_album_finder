@@ -127,7 +127,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Home Screen')),
       body: const Center(
         child: Text(
-          'you need to log in!!',
+          'home screen!!!!!!',
         ),
       ),
     );
@@ -142,10 +142,10 @@ class LibraryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Details Screen')),
+      appBar: AppBar(title: const Text('Library Screen')),
       body: const Center(
         child: Text(
-          "Congratulations!!!\nYou're successfully logged in.",
+          'library screen!!!!!!',
         ),
       ),
     );
