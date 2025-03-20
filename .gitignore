@@ -46,3 +46,6 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+
+# Flutter 3.29.0より
+/apps/album_finder/android/app/.cxx
