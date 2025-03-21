@@ -28,9 +28,11 @@ void main() {
         'Navigates to LibraryScreen on /libraries path',
         (WidgetTester tester) async {
           final router = buildRouter();
-          await tester.pumpWidget(MaterialApp.router(
-            routerConfig: router,
-          ));
+          await tester.pumpWidget(
+            MaterialApp.router(
+              routerConfig: router,
+            ),
+          );
 
           router.go('/libraries');
           await tester.pumpAndSettle();
