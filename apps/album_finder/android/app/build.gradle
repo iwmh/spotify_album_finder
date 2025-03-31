@@ -28,6 +28,10 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        // set custom scheme for redirect
+        manifestPlaceholders += [
+            'appAuthRedirectScheme': 'spotifyalbumfinder.iwmh.com'
+        ]
     }
 
     buildTypes {

@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: spotify_api,spotify_repository
+dependency_overrides:
+  spotify_api:
+    path: ..\\..\\packages\\spotify_api
+  spotify_repository:
+    path: ..\\..\\packages\\spotify_repository

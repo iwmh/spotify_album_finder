@@ -51,4 +51,4 @@ app.*.map.json
 /apps/album_finder/android/app/.cxx
 
 # secrets
-/packages/spotify_api/assets/secrets.json
+/apps/album_finder/assets/secrets.json

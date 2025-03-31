@@ -1,6 +1,7 @@
 name: spotify_repository
 description: "A new Flutter package project."
 version: 0.0.1
+publish_to: none
 
 environment:
   sdk: ^3.7.0
@@ -9,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  spotify_api:
+    path: ../spotify_api
 
 dev_dependencies:
   flutter_test:

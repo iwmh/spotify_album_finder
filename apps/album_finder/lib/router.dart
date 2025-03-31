@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:spotify_repository/spotify_repository.dart';
 
 /// routing table を作成
-GoRouter buildRouter() {
+GoRouter buildRouter({
+  required SpotifyRepository spotifyRepository,
+}) {
   return GoRouter(
     routes: <RouteBase>[
       StatefulShellRoute.indexedStack(
